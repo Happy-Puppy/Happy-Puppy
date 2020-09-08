@@ -1,0 +1,89 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+.navbar-default {
+  background-color: #d7d7d7;
+  border-color: #c7c7c7;
+}
+
+.navbar-default .navbar-brand{
+  color: white;
+}
+
+.navbar-default .navbar-nav>li>a{
+  color: white;
+}
+
+
+.navbar-default .navbar-nav>li>a:hover{
+  color: #CAF982;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  color: #CAF982;
+  background-color: #36A9CE;
+}
+
+.footer { 
+  background-color: #d7d7d7;
+}
+.text-muted {
+  color: white;
+}
+
+.ax_default_img{
+  width: 24.9%;
+  height: 90px;
+  text-align: center;
+  float: left;
+}
+
+.ax_default_img img{
+  width: 80px;
+  height: 80px; 
+}
+.page-header{
+  height: 120px;
+  margin: 10px 0 20px;
+}
+
+.ax_default_img .title{
+  font-size: 25px;
+}
