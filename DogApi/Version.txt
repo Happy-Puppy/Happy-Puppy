@@ -1,0 +1,12 @@
+﻿后端-Version 1.0:
+	新增Tool工具，
+	包含:
+	dbAccess: 基础数据库访问工具类
+	dbUserTool: 访问用户表数据库访问层
+	新增Models实体类：
+	包含:
+	UserClass: 用户基础表对象
+	新增Controllers控制类：
+	包含:
+	UserController: 用户控制类
+	
