@@ -1,0 +1,332 @@
+<html lang="zh-CN"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../dog.ico">
+
+    <title>Train Dog App</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/sticky-footer-navbar.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!--<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYFeHtiemh6GXWYSaZJJFJzruegC6tDPQ&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>-->
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Train Dog App</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="playDates.html">PlayDates</a></li>
+            <li><a href="dogs.html">Dogs</a></li>
+            <li><a href="friends.html">Friends</a></li>
+            <li class="active"><a href="contact.html">Contact</a></li>
+            <li><a href="../login.html">Logout</a></li> 
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <!-- Begin page content -->
+    <!-- <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <div class="page">
+            <h2>Dogs List</h2>
+            <form class="form-horizontal" id="doglist">
+              <div class="form-group">
+                <img src="../image/dogs/dog1.jpg" alt="..." class="col-sm-4 img-rounded">
+                <div class="col-sm-8" style="padding-left: 0px;">
+                  <label for="inputName3" class="control-label col-sm-12">Dog Name: Dog 1</label>
+                  <label for="inputName3" class="control-label col-sm-12">Type: Dog Type One</label>
+                  <label for="inputName3" class="control-label col-sm-12">Age: 13 Months</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <img src="../image/dogs/dog1.jpg" alt="..." class="col-sm-4 img-rounded">
+                <div class="col-sm-8" style="padding-left: 0px;">
+                  <label for="inputName3" class="control-label col-sm-12">Dog Name: Dog 1</label>
+                  <label for="inputName3" class="control-label col-sm-12">Type: Dog Type One</label>
+                  <label for="inputName3" class="control-label col-sm-12">Age: 13 Months</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <img src="../image/dogs/dog1.jpg" alt="..." class="col-sm-4 img-rounded">
+                <div class="col-sm-8" style="padding-left: 0px;">
+                  <label for="inputName3" class="control-label col-sm-12">Dog Name: Dog 1</label>
+                  <label for="inputName3" class="control-label col-sm-12">Type: Dog Type One</label>
+                  <label for="inputName3" class="control-label col-sm-12">Age: 13 Months</label>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="page">
+            <h2 id="actTitle">Add Dog</h2>
+            
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label for="txtDogName" class="col-sm-2 control-label">Name:</label>
+                <div class="col-sm-10">
+                  <input class="form-control" id="txtDogName" placeholder="Name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="txtDogTypes" class="col-sm-2 control-label">Type:</label>
+                <div class="col-sm-10">
+                  <select class="form-control" id="txtDogTypes" aria-placeholder="type">
+                    
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="txtDogAge" class="col-sm-2 control-label">Age:</label>
+                <div class="col-sm-8">
+                  <input type="number" class="form-control" id="txtDogAge" placeholder="Age">
+                </div>
+                <label for="txtDogAge" class="col-sm-2 control-label">Months</label>
+              </div>
+              <div class="form-group">
+                <label for="txtDesc" class="col-sm-2 control-label">Desc:</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" id="txtDesc" rows="5" placeholder="Description"></textarea>
+                </div>
+              </div>              
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-3" style="min-height:0px">
+                  <button type="button" class="btn btn-danger" id="btn_addDog">Confirm</button>
+                </div>
+                <div class="col-sm-offset-2 col-sm-3">
+                  <button type="button" class="btn btn-danger" id="btn_editDog">Edit</button>
+                </div>
+                <div class="col-sm-3">
+                  <button type="button" class="btn btn-danger" id="btn_deleteDog">Delete</button>
+                </div>
+                <div class="col-sm-3">
+                  <button type="button" class="btn btn-danger" id="btn_cancel">Cancel</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    -->
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Welcome to the dog train website.</p>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../js/network.js"></script>
+    <script>
+      var userName = "";
+      function loadUserInfo(){
+        if(localStorage.getItem("userName") != undefined){
+          userName = localStorage.getItem("userName");
+        }
+        else{
+          localStorage.clear();
+          $(location).attr('href', '../login.html')
+        }
+        $("#btn_editDog").hide();
+        $("#btn_deleteDog").hide();
+      }
+      loadUserInfo();
+      var doglist = null;
+      function loadDogTypes(){
+        var params = new Object()
+        params.api_url = "DogType"
+        var header = new Object()   
+        GET({
+          params,
+          header,
+          success:function(res){
+            var opts ="";
+            for(var i = 0; i < res.length; i++){
+              opts += "<option>"+res[i].name+"</option>"
+            }
+            $("#txtDogTypes").html(opts);
+            params = new Object()
+            params.api_url = "Dog" 
+            GET({
+              params,
+              header,
+              success:function(subres){ 
+                var dogs ="";
+                doglist = subres;
+                for(var i=0; i< subres.length;i++){
+                  dogs +='<div class="form-group">';
+                  dogs +='<img src="../image/dogs/dog1.jpg" alt="..." onclick="showDogId('+i+')"class="col-sm-4 img-rounded">';
+                  dogs +='<div class="col-sm-8" style="padding-left: 0px;">'
+                  dogs +='<label for="inputName3" class="control-label col-sm-12">Dog Name: '+subres[i].name+'</label>'
+                  dogs +='<label for="inputName3" class="control-label col-sm-12">Type: '+res[subres[i].typeid].name+'</label>'
+                  dogs +='<label for="inputName3" class="control-label col-sm-12">Age: '+subres[i].age+' Months</label>'
+                  dogs +='</div></div>'
+                } 
+                $("#doglist").html(dogs);
+              }
+            })
+          }
+        })
+      }
+      loadDogTypes();
+      var nowDogIndex=-1;
+      function showDogId(sid){
+        //alert(sid);
+        nowDogIndex = sid;
+        $("#txtDogName").val(doglist[sid].name);
+        $("#txtDogTypes").get(0).selectedIndex = doglist[sid].typeid;
+        $("#txtDogAge").val(doglist[sid].age);
+        $("#btn_addDog").hide();
+        $("#btn_editDog").show();
+        $("#btn_deleteDog").show();
+        $("#actTitle").html("Edit/Delete Dog");
+      }
+      $("#btn_addDog").click(function(){
+        var txtDogName = $("#txtDogName").val();
+        var txtDogType = $("#txtDogTypes").get(0).selectedIndex; 
+        var txtDogAge = parseInt($("#txtDogAge").val());
+        var txtDogDesc = $("#txtDogDesc").val();
+        if(txtDogName == ""){
+          alert("pelase input dog name before submit!")
+          return;
+        }
+        if(txtDogAge == ""){
+          alert("pelase input dog age before submit!")
+          return;
+        }
+        var params = new Object();
+        params.api_url = "Dog"
+        params.data = JSON.stringify({
+            
+            "name":txtDogName,
+            "age":txtDogAge,
+            "typeid": txtDogType,
+            "userName": userName
+          })
+        var header = new Object()   
+        POST({
+          params,
+          header,
+          success:function(res){ 
+            if(res){
+              //alert("u add dog success")
+            }
+            else{
+              alert("u add dog failed")
+            }
+            loadDogTypes();
+          }
+        })
+      })
+      $("#btn_cancel").click(function(){        
+        $("#btn_addDog").show();
+        $("#btn_editDog").hide();
+        $("#btn_deleteDog").hide();
+        $("#actTitle").html("Add Dog");
+      })
+      
+      $("#btn_editDog").click(function(){
+        var txtDogName = $("#txtDogName").val();
+        var txtDogType = $("#txtDogTypes").get(0).selectedIndex; 
+        var txtDogAge = parseInt($("#txtDogAge").val());
+        var txtDogDesc = $("#txtDogDesc").val();
+        if(txtDogName == ""){
+          alert("pelase input dog name before submit!")
+          return;
+        }
+        if(txtDogAge == ""){
+          alert("pelase input dog age before submit!")
+          return;
+        }
+        var params = new Object();
+        params.api_url = "Dog"
+        params.data = JSON.stringify({
+            "dogid": doglist[nowDogIndex].dogid,
+            "name":txtDogName,
+            "age":txtDogAge,
+            "typeid": txtDogType,
+            "userName": userName
+          })
+        var header = new Object()   
+        PUT({
+          params,
+          header,
+          success:function(res){ 
+            if(res){
+              //alert("u edit dog success")
+            }
+            else{
+              alert("u edit dog failed")
+            }
+            loadDogTypes();
+          }
+        })
+      })
+      $("#btn_deleteDog").click(function(){
+        var params = new Object();
+        params.api_url = "Dog/" + doglist[nowDogIndex].dogid 
+        var header = new Object()   
+        DEL({
+          params,
+          header,
+          success:function(res){ 
+            if(res){
+              //alert("u delete dog success")
+            }
+            else{
+              alert("u delete dog failed")
+            }
+            loadDogTypes();
+          }
+        })
+      })
+    </script>
+</body></html>
