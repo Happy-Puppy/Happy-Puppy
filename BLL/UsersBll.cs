@@ -6,7 +6,7 @@
 *
 * Ver    变更日期             负责人  变更内容
 * ───────────────────────────────────
-* V0.01  9/16/2020 9:17:38 PM   N/A    初版
+* V0.01  9/24/2020 11:27:54 PM   N/A    初版
 *
 * Copyright (c) 2020. All rights reserved.
 * ───────────────────────────────────
@@ -76,6 +76,7 @@ namespace DogApi.BLL
 			return dal.GetModel(userName);
 		}
 
+		 
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>

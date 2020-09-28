@@ -6,7 +6,7 @@
 *
 * Ver    变更日期             负责人  变更内容
 * ───────────────────────────────────
-* V0.01  9/16/2020 9:17:38 PM   N/A    初版
+* V0.01  9/24/2020 11:27:54 PM   N/A    初版
 *
 * Copyright (c) 2020. All rights reserved.
 * ───────────────────────────────────
@@ -28,6 +28,8 @@ namespace DogApi.Model
 		private double? _lat;
 		private double? _lng;
 		private double? _alt;
+		private string _tel;
+		private int? _age;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -67,6 +69,22 @@ namespace DogApi.Model
 		{
 			set{ _alt=value;}
 			get{return _alt;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string tel
+		{
+			set{ _tel=value;}
+			get{return _tel;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public int? age
+		{
+			set{ _age=value;}
+			get{return _age;}
 		}
 		#endregion Model
 

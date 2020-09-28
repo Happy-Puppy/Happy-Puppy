@@ -29,7 +29,7 @@
     <![endif]-->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <!--<script
-      src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYFeHtiemh6GXWYSaZJJFJzruegC6tDPQ&callback=initMap&libraries=&v=weekly"
       defer
     ></script>-->
   </head>
@@ -63,92 +63,35 @@
     </nav>
 
     <!-- Begin page content -->
-    <!-- <div class="container">
+    <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-md-6">
-          <div class="page">
-            <h2>Dogs List</h2>
-            <form class="form-horizontal" id="doglist">
-              <div class="form-group">
-                <img src="../image/dogs/dog1.jpg" alt="..." class="col-sm-4 img-rounded">
+        <div class="col-xs-12 col-md-12">
+          <div class="page" style="min-height: 300px; font-size: 19px;">
+            <h2>My Contact Page</h2>
+            <form class="form-group" id="doglist" style="text-align: left;">
+              <div class="form-group col-md-6">
+                <img src="../image/users/user.jpg" alt="..." class="col-sm-4 img-circle">
                 <div class="col-sm-8" style="padding-left: 0px;">
-                  <label for="inputName3" class="control-label col-sm-12">Dog Name: Dog 1</label>
-                  <label for="inputName3" class="control-label col-sm-12">Type: Dog Type One</label>
-                  <label for="inputName3" class="control-label col-sm-12">Age: 13 Months</label>
+                  <label for="inputName3" class="control-label col-sm-12">Designer : XXXX</label>
                 </div>
               </div>
-              <div class="form-group">
-                <img src="../image/dogs/dog1.jpg" alt="..." class="col-sm-4 img-rounded">
+              <div class="form-group col-md-6">
+                <img src="../image/users/tel.jpg" alt="..." class="col-sm-4 img-circle">
                 <div class="col-sm-8" style="padding-left: 0px;">
-                  <label for="inputName3" class="control-label col-sm-12">Dog Name: Dog 1</label>
-                  <label for="inputName3" class="control-label col-sm-12">Type: Dog Type One</label>
-                  <label for="inputName3" class="control-label col-sm-12">Age: 13 Months</label>
+                  <label for="inputName3" class="control-label col-sm-12">Tel : 123456789#1</label>
                 </div>
               </div>
-              <div class="form-group">
-                <img src="../image/dogs/dog1.jpg" alt="..." class="col-sm-4 img-rounded">
+              <div class="form-group col-md-12">
+                <img src="../image/users/address.jpg" alt="..." class="col-sm-4 img-circle">
                 <div class="col-sm-8" style="padding-left: 0px;">
-                  <label for="inputName3" class="control-label col-sm-12">Dog Name: Dog 1</label>
-                  <label for="inputName3" class="control-label col-sm-12">Type: Dog Type One</label>
-                  <label for="inputName3" class="control-label col-sm-12">Age: 13 Months</label>
+                  <label for="inputName3" class="control-label col-sm-12">Address : Location xxx Location xxx Location xxx Location xxx</label>
                 </div>
               </div>
             </form>
           </div>
-        </div>
-        <div class="col-xs-12 col-md-6">
-          <div class="page">
-            <h2 id="actTitle">Add Dog</h2>
-            
-            <form class="form-horizontal">
-              <div class="form-group">
-                <label for="txtDogName" class="col-sm-2 control-label">Name:</label>
-                <div class="col-sm-10">
-                  <input class="form-control" id="txtDogName" placeholder="Name">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="txtDogTypes" class="col-sm-2 control-label">Type:</label>
-                <div class="col-sm-10">
-                  <select class="form-control" id="txtDogTypes" aria-placeholder="type">
-                    
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="txtDogAge" class="col-sm-2 control-label">Age:</label>
-                <div class="col-sm-8">
-                  <input type="number" class="form-control" id="txtDogAge" placeholder="Age">
-                </div>
-                <label for="txtDogAge" class="col-sm-2 control-label">Months</label>
-              </div>
-              <div class="form-group">
-                <label for="txtDesc" class="col-sm-2 control-label">Desc:</label>
-                <div class="col-sm-10">
-                  <textarea class="form-control" id="txtDesc" rows="5" placeholder="Description"></textarea>
-                </div>
-              </div>              
-              <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-3" style="min-height:0px">
-                  <button type="button" class="btn btn-danger" id="btn_addDog">Confirm</button>
-                </div>
-                <div class="col-sm-offset-2 col-sm-3">
-                  <button type="button" class="btn btn-danger" id="btn_editDog">Edit</button>
-                </div>
-                <div class="col-sm-3">
-                  <button type="button" class="btn btn-danger" id="btn_deleteDog">Delete</button>
-                </div>
-                <div class="col-sm-3">
-                  <button type="button" class="btn btn-danger" id="btn_cancel">Cancel</button>
-                </div>
-              </div>
-            </form>
-          </div>
-          
-        </div>
+        </div> 
       </div>
-    </div>
-    -->
+    </div> 
     <footer class="footer">
       <div class="container">
         <p class="text-muted">Welcome to the dog train website.</p>
@@ -179,154 +122,6 @@
         $("#btn_deleteDog").hide();
       }
       loadUserInfo();
-      var doglist = null;
-      function loadDogTypes(){
-        var params = new Object()
-        params.api_url = "DogType"
-        var header = new Object()   
-        GET({
-          params,
-          header,
-          success:function(res){
-            var opts ="";
-            for(var i = 0; i < res.length; i++){
-              opts += "<option>"+res[i].name+"</option>"
-            }
-            $("#txtDogTypes").html(opts);
-            params = new Object()
-            params.api_url = "Dog" 
-            GET({
-              params,
-              header,
-              success:function(subres){ 
-                var dogs ="";
-                doglist = subres;
-                for(var i=0; i< subres.length;i++){
-                  dogs +='<div class="form-group">';
-                  dogs +='<img src="../image/dogs/dog1.jpg" alt="..." onclick="showDogId('+i+')"class="col-sm-4 img-rounded">';
-                  dogs +='<div class="col-sm-8" style="padding-left: 0px;">'
-                  dogs +='<label for="inputName3" class="control-label col-sm-12">Dog Name: '+subres[i].name+'</label>'
-                  dogs +='<label for="inputName3" class="control-label col-sm-12">Type: '+res[subres[i].typeid].name+'</label>'
-                  dogs +='<label for="inputName3" class="control-label col-sm-12">Age: '+subres[i].age+' Months</label>'
-                  dogs +='</div></div>'
-                } 
-                $("#doglist").html(dogs);
-              }
-            })
-          }
-        })
-      }
-      loadDogTypes();
-      var nowDogIndex=-1;
-      function showDogId(sid){
-        //alert(sid);
-        nowDogIndex = sid;
-        $("#txtDogName").val(doglist[sid].name);
-        $("#txtDogTypes").get(0).selectedIndex = doglist[sid].typeid;
-        $("#txtDogAge").val(doglist[sid].age);
-        $("#btn_addDog").hide();
-        $("#btn_editDog").show();
-        $("#btn_deleteDog").show();
-        $("#actTitle").html("Edit/Delete Dog");
-      }
-      $("#btn_addDog").click(function(){
-        var txtDogName = $("#txtDogName").val();
-        var txtDogType = $("#txtDogTypes").get(0).selectedIndex; 
-        var txtDogAge = parseInt($("#txtDogAge").val());
-        var txtDogDesc = $("#txtDogDesc").val();
-        if(txtDogName == ""){
-          alert("pelase input dog name before submit!")
-          return;
-        }
-        if(txtDogAge == ""){
-          alert("pelase input dog age before submit!")
-          return;
-        }
-        var params = new Object();
-        params.api_url = "Dog"
-        params.data = JSON.stringify({
-            
-            "name":txtDogName,
-            "age":txtDogAge,
-            "typeid": txtDogType,
-            "userName": userName
-          })
-        var header = new Object()   
-        POST({
-          params,
-          header,
-          success:function(res){ 
-            if(res){
-              //alert("u add dog success")
-            }
-            else{
-              alert("u add dog failed")
-            }
-            loadDogTypes();
-          }
-        })
-      })
-      $("#btn_cancel").click(function(){        
-        $("#btn_addDog").show();
-        $("#btn_editDog").hide();
-        $("#btn_deleteDog").hide();
-        $("#actTitle").html("Add Dog");
-      })
       
-      $("#btn_editDog").click(function(){
-        var txtDogName = $("#txtDogName").val();
-        var txtDogType = $("#txtDogTypes").get(0).selectedIndex; 
-        var txtDogAge = parseInt($("#txtDogAge").val());
-        var txtDogDesc = $("#txtDogDesc").val();
-        if(txtDogName == ""){
-          alert("pelase input dog name before submit!")
-          return;
-        }
-        if(txtDogAge == ""){
-          alert("pelase input dog age before submit!")
-          return;
-        }
-        var params = new Object();
-        params.api_url = "Dog"
-        params.data = JSON.stringify({
-            "dogid": doglist[nowDogIndex].dogid,
-            "name":txtDogName,
-            "age":txtDogAge,
-            "typeid": txtDogType,
-            "userName": userName
-          })
-        var header = new Object()   
-        PUT({
-          params,
-          header,
-          success:function(res){ 
-            if(res){
-              //alert("u edit dog success")
-            }
-            else{
-              alert("u edit dog failed")
-            }
-            loadDogTypes();
-          }
-        })
-      })
-      $("#btn_deleteDog").click(function(){
-        var params = new Object();
-        params.api_url = "Dog/" + doglist[nowDogIndex].dogid 
-        var header = new Object()   
-        DEL({
-          params,
-          header,
-          success:function(res){ 
-            if(res){
-              //alert("u delete dog success")
-            }
-            else{
-              alert("u delete dog failed")
-            }
-            loadDogTypes();
-          }
-        })
-      })
     </script>
 </body></html>

@@ -28,5 +28,7 @@
 后端-Version 1.4
 	添加ActivityController控制类
 	添加FriendController控制类
-
+后端-Version 1.5
+	将用户前后端联通
+	显示通讯录页面
 	

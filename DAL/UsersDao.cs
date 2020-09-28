@@ -6,7 +6,7 @@
 *
 * Ver    变更日期             负责人  变更内容
 * ───────────────────────────────────
-* V0.01  9/16/2020 9:17:38 PM   N/A    初版
+* V0.01  9/24/2020 11:27:54 PM   N/A    初版
 *
 * Copyright (c) 2020. All rights reserved.
 * ───────────────────────────────────
@@ -16,6 +16,7 @@ using System.Data;
 using System.Text;
 using System.Data.SQLite;
 using DogApi.Tool;//Please add references
+
 namespace DogApi.DAL
 {
 	/// <summary>
@@ -50,20 +51,24 @@ namespace DogApi.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into users(");
-			strSql.Append("userName,passWord,lat,lng,alt)");
+			strSql.Append("userName,passWord,lat,lng,alt,tel,age)");
 			strSql.Append(" values (");
-			strSql.Append("@userName,@passWord,@lat,@lng,@alt)");
+			strSql.Append("@userName,@passWord,@lat,@lng,@alt,@tel,@age)");
 			SQLiteParameter[] parameters = {
 					new SQLiteParameter("@userName", DbType.String,25),
 					new SQLiteParameter("@passWord", DbType.String,50),
 					new SQLiteParameter("@lat", DbType.Double,8),
 					new SQLiteParameter("@lng", DbType.Double,8),
-					new SQLiteParameter("@alt", DbType.Double,8)};
+					new SQLiteParameter("@alt", DbType.Double,8),
+					new SQLiteParameter("@tel", DbType.String,30),
+					new SQLiteParameter("@age", DbType.Int32,8)};
 			parameters[0].Value = model.userName;
 			parameters[1].Value = model.passWord;
 			parameters[2].Value = model.lat;
 			parameters[3].Value = model.lng;
 			parameters[4].Value = model.alt;
+			parameters[5].Value = model.tel;
+			parameters[6].Value = model.age;
 
 			int rows=DbHelperSQLite.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -85,19 +90,25 @@ namespace DogApi.DAL
 			strSql.Append("passWord=@passWord,");
 			strSql.Append("lat=@lat,");
 			strSql.Append("lng=@lng,");
-			strSql.Append("alt=@alt");
+			strSql.Append("alt=@alt,");
+			strSql.Append("tel=@tel,");
+			strSql.Append("age=@age");
 			strSql.Append(" where userName=@userName ");
 			SQLiteParameter[] parameters = {
 					new SQLiteParameter("@passWord", DbType.String,50),
 					new SQLiteParameter("@lat", DbType.Double,8),
 					new SQLiteParameter("@lng", DbType.Double,8),
 					new SQLiteParameter("@alt", DbType.Double,8),
+					new SQLiteParameter("@tel", DbType.String,30),
+					new SQLiteParameter("@age", DbType.Int32,8),
 					new SQLiteParameter("@userName", DbType.String,25)};
 			parameters[0].Value = model.passWord;
 			parameters[1].Value = model.lat;
 			parameters[2].Value = model.lng;
 			parameters[3].Value = model.alt;
-			parameters[4].Value = model.userName;
+			parameters[4].Value = model.tel;
+			parameters[5].Value = model.age;
+			parameters[6].Value = model.userName;
 
 			int rows=DbHelperSQLite.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -160,7 +171,7 @@ namespace DogApi.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select userName,passWord,lat,lng,alt from users ");
+			strSql.Append("select userName,passWord,lat,lng,alt,tel,age from users ");
 			strSql.Append(" where userName=@userName ");
 			SQLiteParameter[] parameters = {
 					new SQLiteParameter("@userName", DbType.String,25)			};
@@ -198,6 +209,14 @@ namespace DogApi.DAL
 					//model.lat=row["lat"].ToString();
 					//model.lng=row["lng"].ToString();
 					//model.alt=row["alt"].ToString();
+				if(row["tel"]!=null)
+				{
+					model.tel=row["tel"].ToString();
+				}
+				if(row["age"]!=null && row["age"].ToString()!="")
+				{
+					model.age=int.Parse(row["age"].ToString());
+				}
 			}
 			return model;
 		}
@@ -208,7 +227,7 @@ namespace DogApi.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select userName,passWord,lat,lng,alt ");
+			strSql.Append("select userName,passWord,lat,lng,alt,tel,age ");
 			strSql.Append(" FROM users ");
 			if(strWhere.Trim()!="")
 			{
